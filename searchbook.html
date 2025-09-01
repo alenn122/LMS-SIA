@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="img/loa_logo.png" type="image/x-icon">
+    <!-- BS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>LMS</title>
+    <style>
+        header{
+            position: relative;
+            top: 0;left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-color);
+            box-shadow: 1px 1px 5px;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cdsp{
+            color: #9b0f0f;
+            font-size: 20px;
+        }
+        .loa{
+            color: #141ea0;
+            font-size: 24px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .iso{
+            font-size: 12px;
+        }
+        .back-link {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #0d6efd;
+        text-decoration: none;
+        }
+        .form-title {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: start;
+        margin-bottom: 20px;
+        }
+        .card-custom {
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* thead{
+            background-color: red !important;
+            border: 2px solid red;
+        }
+        tr{
+            background-color: red !important;
+            border: 2px solid rgb(38, 0, 255);
+        } */
+        .btn-shelf-row {
+            background-color: oklch(27.8% 0.033 256.848);
+            color: white;
+            border-radius: 50rem;
+            font-weight: 500;
+        }
+        .btn-pagination {
+            background-color: #0d6efd;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                <img src="img/loa_logo.png" alt="" width="70%" class="px-4">
+            </div>
+            <div class="text-center lh-1">
+                <li class="cdsp">COLEGIO de SAN PEDRO</li>
+                <li>UNDER THE NEW MANAGEMENT OF</li>
+                <li class="loa">Lyceum of Alabang</li>
+                <li class="iso">ISO 9001:2015 Certified</li>
+            </div>
+            <div class="logo">
+                <img src="img/cdsp_logo.png" alt="" width="40%">
+            </div>
+        </header>
+    <div class="container">
+        <div class="row g-5 mt-5">
+            <!-- LEFT -->
+            <div class="col-12 col-md-4">
+                <a href="index.html" class="back-link"> < Back</a>
+                <div class="card card-custom p-4 h-100">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold d-flex align-items-center mb-3">
+                            <i class="bi bi-book me-2 text-secondary"></i>
+                            <span>📖 How to Use:</span>
+                        </h2>
+                        <ol class="list-unstyled mb-0 text-muted">
+                            <li class="mb-2">1. Search for a book using the title bar.</li>
+                            <li class="mb-2">2. Click the <span class="fw-bold">Shelf & Row</span> button of the book.</li>
+                            <li class="mb-2">3. Look for the blinking light on the shelf.</li>
+                        </ol>
+                        <p class="pt-4 text-muted">
+                            <span role="img" aria-label="smiling-face">😊</span> Happy reading!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-12 col-md-8">
+                <div class="form-title mb-4">Search for a Book</div>
+                <div class="d-flex flex-column h-100">
+                    <!-- SEARCH -->
+                    <div class="d-flex flex-column flex-sm-row mb-4 gap-3">
+                        <input type="text" class="form-control p-3" placeholder="Search by title...">
+                        <select class="form-select p-3" style="width: 40%;">
+                            <option>All Category</option>
+                            <option>Self-help</option>
+                            <option>Programming</option>
+                        </select>
+                    </div>
+
+                    <!-- TABLE -->
+                    <div class="card card-custom p-0 overflow-hidden">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-secondary">
+                                    <tr>
+                                        <th class="py-3 ps-4 fw-600" style="width: 25%;">Title</th>
+                                        <th class="py-3 fw-600" style="width: 25%;">Author</th>
+                                        <th class="py-3 fw-600" style="width: 25%;">Category</th>
+                                        <th class="py-3 fw-600" style="width: 25%;">Shelf & Row</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-3 ps-4">
+                                            <a href="#" class="text-primary text-decoration-underline">Atomic Habits</a>
+                                        </td>
+                                        <td class="py-3">James Clear</td>
+                                        <td class="py-3">Self-help</td>
+                                        <td class="py-3">
+                                            <button class="btn btn-sm btn-shelf-row">
+                                                Shelf B, Row 2
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- PIGINATION -->
+                    <div class="d-flex justify-content-center pt-4">
+                        <button class="btn btn-pagination">1</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
