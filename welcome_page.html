@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Welcome</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+<body>
+  <!-- HEADER -->
+  <header class="d-flex justify-content-between align-items-center p-3">
+    <div class="logo">
+      <img src="img/loa_logo.png" alt="" width="70%" class="px-4">
+    </div>
+    <div class="text-center lh-1">
+      <li class="cdsp">COLEGIO de SAN PEDRO</li>
+      <li>UNDER THE NEW MANAGEMENT OF</li>
+      <li class="loa">Lyceum of Alabang</li>
+      <li class="iso">ISO 9001:2015 Certified</li>
+    </div>
+    <div class="logo">
+      <img src="img/cdsp_logo.png" alt="" width="40%">
+    </div>
+  </header>
+
+  <div class="container-welcome">
+    <!-- Welcome Message -->
+    <h2 class="mb-4">Welcome, <span id="userName">Jane</span>!</h2>
+    
+    <!-- Profile Section -->
+    <div class="profile-card p-3 mb-4 d-flex align-items-center">
+      <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="Profile" class="avatar me-3">
+      <div>
+        <h5 id="fullName">Jane Dela Cruz</h5>
+        <p class="mb-0" id="userRole">Student – BSIT 3A</p>
+      </div>
+    </div>
+
+    <!-- entry Time -->
+    <p class="text-success fw-semibold mb-4">
+      Your entry has been recorded at <span id="entryTime"></span>.
+    </p>
+
+    <!-- borrowed Books -->
+    <h5>Borrowed Books Summary</h5>
+    <ul class="list-group book-list mb-4" id="bookList"></ul>
+
+    <!-- close Button -->
+    <a href="index.html" class="btn btn-secondary">Close Now</a>
+
+
+    <p class="footer-text mt-3">This screen will return to idle mode in a few seconds...</p>
+  </div>
+
+  <!-- modal -->
+  <div class="modal fade" id="returnModal" tabindex="-1" aria-labelledby="returnModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="returnModalLabel">Return Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Please proceed to the librarian to return the book.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // sample user data
+    const user = {
+      name: "Jane",
+      fullName: "Jane Dela Cruz",
+      role: "Student – BSIT 3A",
+      books: [
+        "Introduction to Algorithms - 3rd Edition",
+        "Clean Code: A Handbook of Agile Software Craftsmanship",
+        "Design Patterns: Elements of Reusable Object-Oriented Software"
+      ]
+    };
+
+    // load user info
+    document.getElementById("userName").textContent = user.name;
+    document.getElementById("fullName").textContent = user.fullName;
+    document.getElementById("userRole").textContent = user.role;
+
+    const bookList = document.getElementById("bookList");
+    user.books.forEach(book => {
+      const li = document.createElement("li");
+      li.classList.add("list-group-item");
+      li.innerHTML = `
+        <span>${book}</span>
+        <button class="btn btn-dark btn-sm return-btn">Return Book</button>
+      `;
+      bookList.appendChild(li);
+    });
+
+    // Real-time time
+    function getCurrentTime() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      return `${hours}:${minutes} ${ampm}`;
+    }
+    document.getElementById("entryTime").textContent = getCurrentTime();
+
+    function closeScreen() {
+      alert("Closing screen...");
+    }
+
+    setTimeout(() => alert("Screen going idle..."), 300000); 
+
+    const returnModal = new bootstrap.Modal(document.getElementById('returnModal'));
+    document.querySelectorAll('.return-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        returnModal.show();
+      });
+    });
+  </script>
+</body>
+</html>
