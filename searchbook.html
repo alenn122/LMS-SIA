@@ -110,41 +110,33 @@
                 <img src="img/cdsp_logo.png" alt="" width="40%">
             </div>
         </header>
-    <div class="container">
-        <div class="row g-5 mt-5">
-            <!-- LEFT -->
-            <div class="col-12 col-md-4">
-                <a href="index.html" class="back-link"> < Back</a>
-                <div class="card card-custom p-4 h-100">
-                    <div class="card-body">
-                        <h2 class="h5 fw-bold d-flex align-items-center mb-3">
-                            <i class="bi bi-book me-2 text-secondary"></i>
-                            <span>📖 How to Use:</span>
-                        </h2>
-                        <ol class="list-unstyled mb-0 text-muted">
-                            <li class="mb-2">1. Search for a book using the title bar.</li>
-                            <li class="mb-2">2. Click the <span class="fw-bold">Shelf & Row</span> button of the book.</li>
-                            <li class="mb-2">3. Look for the blinking light on the shelf.</li>
-                        </ol>
-                        <p class="pt-4 text-muted">
-                            <span role="img" aria-label="smiling-face">😊</span> Happy reading!
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+    <div class="container px-0">
+
+        <div class="row mt-5">
+            
 
             <!-- RIGHT -->
-            <div class="col-12 col-md-8">
-                <div class="form-title mb-4">Search for a Book</div>
+            <!--div class="col-12 col-md-8"-->
+            <div class="col-12 px-0">
+                <!--div class="form-title mb-4 text-center">Search for a Book</div-->
+                <div class="form-title mb-4 text-center">Search for a Book</div>
+
                 <div class="d-flex flex-column h-100">
+
+
+
                     <!-- SEARCH -->
-                    <div class="d-flex flex-column flex-sm-row mb-4 gap-3">
+                    <div class="d-flex flex-column flex-sm-row mb-4 gap-3 align-items-center">
                         <input type="text" class="form-control p-3" placeholder="Search by title...">
                         <select class="form-select p-3" style="width: 40%;">
                             <option>All Category</option>
                             <option>Self-help</option>
                             <option>Programming</option>
                         </select>
+                        <!--added cart icon for list of books to be borrowed-->
+                        <div id="cart-icon" style="font-size: 24px; cursor: pointer;">🛒</div>
+
                     </div>
 
                     <!-- TABLE -->
@@ -227,6 +219,14 @@
         </div>
         </div>
     </div>
+
+    <!-- SLIDE-OUT CART PANEL -->
+    <div id="cart-panel">
+        <h4 class="mb-3">Books to Borrow</h4>
+        <ul id="cart-list" class="cart-list"></ul>
+        <button id="borrow-books-btn" class="borrow-books-btn mt-2 w-100">Borrow Books</button>
+    </div>
+
 
     <script src="js/main.js"></script>
 </body>

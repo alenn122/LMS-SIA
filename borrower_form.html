@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrower Form</title>
+  <link rel="stylesheet" href="css/borrower_form.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h3>Library Borrower Form</h3>
+  </header>
+
+  <div class="container">
+    <div class="mb-4">
+      <label for="student-id" class="form-label">School ID No.</label>
+      <input type="text" id="student-id" class="form-control" placeholder="Enter School ID No.">
+    </div>
+
+    <!-- STUDENT FORM -->
+    <div id="student-form" class="d-none">
+      <h4>Student Details</h4>
+      <div class="mb-2">
+        <label>Name:</label>
+        <input type="text" id="student-name" class="form-control" readonly>
+      </div>
+      <div class="mb-2">
+        <label>Course:</label>
+        <input type="text" id="course" class="form-control" readonly>
+      </div>
+      <div class="mb-2">
+        <label>Section:</label>
+        <input type="text" id="section" class="form-control" readonly>
+      </div>
+
+      <h5 class="mt-3">Books to Borrow</h5>
+      <ul id="borrowed-books" class="list-group mb-3"></ul>
+      <button id="confirm-borrow-student" class="btn btn-primary">Confirm Borrow</button>
+    </div>
+
+    <!-- FACULTY FORM -->
+    <div id="faculty-form" class="d-none">
+      <h4>Faculty Details</h4>
+      <div class="mb-2">
+        <label>Name:</label>
+        <input type="text" id="faculty-name" class="form-control" readonly>
+      </div>
+      <div class="mb-2">
+        <label>Role/Department:</label>
+        <input type="text" id="faculty-role" class="form-control" readonly>
+      </div>
+
+      <h5 class="mt-3">Books to Borrow</h5>
+      <ul id="borrowed-books-faculty" class="list-group mb-3"></ul>
+      <button id="confirm-borrow-faculty" class="btn btn-primary">Confirm Borrow</button>
+    </div>
+  </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="d-none">
+    <div class="modal-overlay"></div> 
+    <div class="modal-content">
+        <p>Please proceed to the librarian to get your books.</p>
+        <button id="close-modal" class="btn btn-primary">OK</button>
+    </div>
+    </div>
+
+
+  <script src="js/borrower_form.js"></script>
+</body>
+</html>

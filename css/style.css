@@ -231,3 +231,99 @@ header{
 .description p {
     margin: 5px 0;
 }
+
+/* CART ICON */
+#cart-icon {
+    
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px; 
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#cart-icon:hover {
+    text-shadow: 0 0 8px white;
+    transform: scale(1.1);
+}
+
+/* CART PANEL */
+#cart-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;      
+  width: 320px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,.15);
+  transition: right .3s ease;
+  z-index: 1999;
+  padding: 16px;
+  overflow-y: auto;
+  pointer-events: none; 
+}
+#cart-panel.open { 
+  right: 0; 
+  pointer-events: auto; 
+}
+
+#cart-list img {
+  width: 40px;  
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+#cart-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#cart-list .book-title {
+    font-family: 'Poppins', serif; 
+    font-size: 1rem; /* smaller than panel title */
+    font-weight: bold;
+    margin: 0;
+    color: #000
+}
+
+/* Optional: make author smaller and lighter */
+#cart-list .book-author {
+    font-size: 0.85rem;
+    color: #000;
+    margin: 0;
+}
+
+
+/* CART PANEL BUTTON */
+.borrow-books-btn {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.borrow-books-btn:hover {
+    background: #0b5ed7;
+}
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto; /* push to the right */
+}
+
+.remove-btn:hover {
+    color: darkred;
+}
