@@ -162,8 +162,9 @@
                                 <tbody>
                                     <tr>
                                         <td class="py-3 ps-4">
-                                            <a href="#" class="text-primary text-decoration-underline">Atomic Habits</a>
-                                        </td>
+                                            <!-- changed the class here-->
+                                            <a href="#" class="book-title">Atomic Habits</a> 
+                                        </td>                                      
                                         <td class="py-3">James Clear</td>
                                         <td class="py-3">Self-help</td>
                                         <td class="py-3">
@@ -177,7 +178,7 @@
                         </div>
                     </div>
 
-                    <!-- PIGINATION -->
+                    <!-- PAGINATION -->
                     <div class="d-flex justify-content-center pt-4">
                         <button class="btn btn-pagination">1</button>
                     </div>
@@ -185,5 +186,48 @@
             </div>
         </div>
     </div>
+
+    <!-- MODAL FOR BOOK DETAILS-->
+    <div class="book-modal-overlay">
+        <div class="book-modal">
+        <div class="modal-header">
+            <h2>Book Details</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <div class="modal-body">
+            
+            <div class="top-row">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL.jpg" alt="Atomic Habits" class="book-cover">
+
+            <div class="right-column">
+                <!-- book info -->
+                <div class="book-info">
+                <h3>Atomic Habits</h3>
+                <p><strong>Author:</strong> James Clear</p>
+                <p><strong>Published Date:</strong> 2018</p>
+                <p><strong>ISBN:</strong> 9780735211292</p>
+                </div>
+
+                <!-- availability -->
+                <div class="availability-card">
+                <span class="status">✅ Available</span>
+                <p><strong>Category/Shelf:</strong> Self-Help</p>
+                <p><strong>Row:</strong> 5</p>
+                <button class="borrow-btn">Borrow</button>
+                </div>
+            </div>
+            </div>
+
+            <!-- description of the book -->
+            <div class="description">
+            <p><strong>Description:</strong></p>
+            <p>Atomic Habits is a bestselling book that offers practical strategies for forming good habits, breaking bad ones, and mastering the tiny behaviors that lead to remarkable results.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

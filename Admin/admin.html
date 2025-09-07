@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/img/loa_logo.png" type="image/x-icon">
+    <!-- BS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ADMIN CSS -->
+    <link rel="stylesheet" href="admin.css">
+    <title>ADMIN</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="/img/loa_logo.png" alt=""></div>
+
+        <div class="header-text">
+        COLEGIO DE SAN PEDRO <br>
+        Phase 1A, Pacita Complex, 1, City Of San Pedro, 4023 Laguna
+        </div>
+    </header>
+
+        <!-- NAVIGATION -->
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="account d-flex">
+            <img src="/img/cdsp_logo.png" alt="">
+            <div class="name">
+            Librarian
+            sample@gmail.com
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href=""><i class="fa-solid fa-bars-progress"></i> Dashboard</a>
+            <a href=""><i class="fa-solid fa-book-tanakh"></i> Borrow Books</a>
+            <a href=""><i class="fa-solid fa-book"></i> Return Books</a>
+            <a href=""><i class="fa-solid fa-file"></i> REquests</a>
+            <a href=""><i class="fa-solid fa-users-rectangle"></i> Students</a>
+            <a href=""><i class="fa-solid fa-book-open-reader"></i> Book Inventory</a>
+            <a href=""><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href=""><i class="fas fa-receipt"></i> Activity Logs</a>
+            <a href="../admin/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menuToggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        });
+    });
+</script>
+</html>
