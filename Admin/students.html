@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/img/loa_logo.png" type="image/x-icon">
+    <!-- BS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ADMIN CSS -->
+    <link rel="stylesheet" href="admin.css">
+    <title>STUDENTS</title>
+    <style>
+        /* Main */
+        .main-header {
+            margin-top: 120px;
+            background-color: #e9eef6;
+            text-align: center;
+            padding: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .table thead {
+            background: #e6ebf5;
+            }
+        .bottom-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            }
+        .bottom-buttons a {
+            text-decoration: none;
+            font-weight: 500;
+            }
+
+        .b-book {
+            margin-left: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="/img/loa_logo.png" alt=""></div>
+
+        <div class="header-text">
+            COLEGIO DE SAN PEDRO <br>
+            Phase 1A, Pacita Complex, 1, City Of San Pedro, 4023 Laguna
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="account d-flex">
+            <img src="/img/cdsp_logo.png" alt="">
+            <div class="name">
+                Librarian
+                sample@gmail.com
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="../Admin/admin.html"><i class="fa-solid fa-bars-progress"></i> Dashboard</a>
+            <a href="../Admin/borrow-books.html"><i class="fa-solid fa-book-tanakh"></i> Borrow Books</a>
+            <a href="../Admin/return-books.html"><i class="fa-solid fa-book"></i> Return Books</a>
+            <a href="../Admin/students.html" class="active"><i class="fa-solid fa-users-rectangle"></i> Students</a>
+            <a href="../Admin/book-inventory.html"><i class="fa-solid fa-book-open-reader"></i> Book Inventory</a>
+            <a href=""><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href=""><i class="fas fa-receipt"></i> Activity Logs</a>
+            <a href="../admin/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <!-- Main Content -->
+    <div class="main-header mb-5">STUDENTS</div>
+    <div class="container m-auto">
+        <div class="row b-book">
+            <!-- Student Info -->
+            <form class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="STUDENT ID NO.">
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-custom w-100">SEARCH</button>
+                </div>
+            </form>
+
+            <!-- Student Info -->
+            <form class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="NAME">
+                </div>
+                <div class="col-md-4">
+                    <input type="email" class="form-control" placeholder="EMAIL">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="STATUS">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="PROGRAM/STRAND">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="YEAR LEVEL">
+                </div>
+                <div class="col-md-4">
+                    <input type="date" class="form-control" placeholder="SELECT DATE">
+                </div>
+            </form>
+
+            <!-- Enter/Exit History -->
+            <h6 class="text-center fw-bold mb-3">Enter/Exit History</h6>
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle text-center">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>ENTER TIME</th>
+                            <th>EXIT TIME</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" class="text-muted">No data available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Bottom Buttons -->
+            <div class="bottom-buttons">
+                <div>
+                    <button class="btn btn-custom me-2">BOOKS BORROWED</button>
+                    <button class="btn btn-custom">OVERDUE BOOKS</button>
+                </div>
+                <div>
+                    <a href="#">View Borrowed Books Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="admin.js"></script>
+
+</html>
