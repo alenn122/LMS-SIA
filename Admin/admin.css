@@ -143,3 +143,17 @@ header {
     background-color: oklch(27.8% 0.033 256.848);
     color: white;
 }
+
+/* Layout adjustments */
+.content {
+  margin-left: 280px; /* depende sa sidebar width */
+  margin-top: 100px;  /* depende sa header height */
+  padding: 30px;
+}
+
+/* Card look for dashboard sections */
+.card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
