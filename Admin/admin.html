@@ -63,31 +63,15 @@
 
         <div class="header-text">
             COLEGIO DE SAN PEDRO <br>
+            UNDER THE NEW MANAGEMENT OF LYCEUM OF ALABANG
             Phase 1A, Pacita Complex, 1, City Of San Pedro, 4023 Laguna
         </div>
     </header>
 
     <!-- NAVIGATION -->
-    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-    <div class="sidebar" id="sidebar">
-        <div class="account d-flex">
-            <img src="/img/cdsp_logo.png" alt="">
-            <div class="name">
-                Librarian
-                sample@gmail.com
-            </div>
-        </div>
-        <div class="nav-links">
-            <a href="../Admin/admin.html"><i class="fa-solid fa-bars-progress"></i> Dashboard</a>
-            <a href="../Admin/borrowbooks.html"><i class="fa-solid fa-book-tanakh"></i> Borrow Books</a>
-            <a href="../Admin/returnbooks.html"><i class="fa-solid fa-book"></i> Return Books</a>
-            <a href="../Admin/students.html"><i class="fa-solid fa-users-rectangle"></i> Students</a>
-            <a href="../Admin/bookinventory.php"><i class="fa-solid fa-book-open-reader"></i> Book Inventory</a>
-            <a href=""><i class="fa-solid fa-gear"></i>Settings</a>
-            <a href=""><i class="fas fa-receipt"></i> Activity Logs</a>
-            <a href="../admin/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
-    </div>
+    <div id="sidebar-container"></div>
+
+
     <!-- MAIN CONTENT -->
         <div class="main-header mb-5">DASHBOARD</div>
         <div class="container m-auto">
@@ -192,6 +176,32 @@
             </div>
         </div>
     </div>
+
+    <script>
+    fetch("sidebar.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("sidebar-container").innerHTML = data;
+
+        // After sidebar loads, activate JS inside it
+        const sidebar = document.querySelector(".sidebar");
+        const toggleBtn = document.querySelector(".menu-toggle");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+        });
+
+        // Highlight active link
+        const links = document.querySelectorAll(".nav-links a");
+        links.forEach(link => {
+            if (window.location.href.includes(link.getAttribute("href"))) {
+            link.classList.add("active");
+            }
+        });
+        })
+        .catch(err => console.error("Sidebar load error:", err));
+    </script>
+
 </body>
 <script src="admin.js"></script>
 

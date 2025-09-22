@@ -1,0 +1,140 @@
+<!-- sidebar.html -->
+<style>
+  /* Sidebar container */
+/* Sidebar container */
+.sidebar {
+  width: 220px;
+  background-color: #1e1e2f;
+  color: #fff;
+  transition: width 0.3s;
+  overflow: hidden;
+  position: fixed;
+  top: 0px; /* Push below fixed header */
+  left: 0;
+  height: calc(100vh - 80px); /* Fill screen but exclude header */
+  z-index: 999;
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Account section */
+.sidebar .account {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.sidebar .account img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar .account .name .full-text {
+  transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .full-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Navigation links */
+.sidebar .nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.sidebar .nav-links a i {
+  min-width: 30px;
+  text-align: center;
+}
+
+.sidebar .nav-links a .link-text {
+  transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .link-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .nav-links a.active {
+  background-color: #33334d;
+}
+
+/* Toggle button */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+  display: block;
+}
+
+/* MAIN CONTENT adjustment */
+.content-container {
+  margin-top: 80px; /* Match header height */
+  margin-left: 220px; /* Match sidebar width */
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is collapsed */
+.sidebar.collapsed ~ .content-container {
+  margin-left: 60px;
+}
+
+</style>
+
+<div class="sidebar" id="sidebar">
+  <button class="menu-toggle" id="menuToggle">☰</button>
+
+  <div class="account">
+    <img src="/img/cdsp_logo.png" alt="Admin">
+    <div class="name">
+      <span class="full-text">Librarian</span>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="admin.html"><i class="fa-solid fa-bars-progress"></i> <span class="link-text">Dashboard</span></a>
+    <a href="borrow-books.html"><i class="fa-solid fa-book-tanakh"></i> <span class="link-text">Borrow Books</span></a>
+    <a href="return-books.html"><i class="fa-solid fa-book"></i> <span class="link-text">Return Books</span></a>
+    <a href="students.html"><i class="fa-solid fa-users-rectangle"></i> <span class="link-text">Students</span></a>
+    <a href="book-inventory.html"><i class="fa-solid fa-book-open-reader"></i> <span class="link-text">Book Inventory</span></a>
+    <a href="#"><i class="fa-solid fa-gear"></i> <span class="link-text">Settings</span></a>
+    <a href="#"><i class="fas fa-receipt"></i> <span class="link-text">Activity Logs</span></a>
+    <a href="login.html"><i class="fas fa-sign-out-alt"></i> <span class="link-text">Logout</span></a>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sidebar = document.querySelector(".sidebar");
+    const toggleBtn = document.querySelector(".menu-toggle");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+    });
+
+    // Highlight active link
+    const links = document.querySelectorAll(".nav-links a");
+    links.forEach(link => {
+      if (window.location.href.includes(link.getAttribute("href"))) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
