@@ -1,3 +1,8 @@
+<?php
+require_once '../connection.php';
+require_once '../session_auth.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

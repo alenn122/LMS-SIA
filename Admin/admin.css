@@ -146,9 +146,9 @@ header {
 
 /* Layout adjustments */
 .content {
-  margin-left: 280px; /* depende sa sidebar width */
-  margin-top: 100px;  /* depende sa header height */
-  padding: 30px;
+    margin-left: 280px; /* depende sa sidebar width */
+    margin-top: 100px;  /* depende sa header height */
+    padding: 30px;
 }
 
 /* Card look for dashboard sections */
