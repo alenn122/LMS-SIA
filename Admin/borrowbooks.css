@@ -1,0 +1,13 @@
+.main-content {
+    margin-left: 300px;
+    padding: 20px;
+    padding-top: 100px;
+    background: #f8f9fa;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 100px;
+}
